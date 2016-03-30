@@ -1,0 +1,3 @@
+EventsModule_Index:
+    pattern: /EventsModule/index
+    defaults: { _controller: "EventsModule:Index:index"}
