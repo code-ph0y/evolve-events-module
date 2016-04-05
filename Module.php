@@ -2,6 +2,7 @@
 
 namespace EventsModule;
 
+use PPI\Framework\Autoload;
 use PPI\Framework\Module\AbstractModule;
 
 class Module extends AbstractModule
