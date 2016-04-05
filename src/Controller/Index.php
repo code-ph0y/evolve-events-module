@@ -2,11 +2,11 @@
 namespace EventsModule\Controller;
 
 use EventsModule\Controller\Shared as SharedController;
-use Psr\Http\Message\RequestInterface;
+use PPI\Framework\Http\Request as Request;
 
 class Index extends SharedController
 {
-    public function indexAction(RequestInterface $request)
+    public function indexAction(Request $request)
     {
         return $this->render('EventsModule:index:index.html.php');
     }

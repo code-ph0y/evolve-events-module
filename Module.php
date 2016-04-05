@@ -6,6 +6,23 @@ use PPI\Framework\Module\AbstractModule;
 
 class Module extends AbstractModule
 {
+    /**
+     * Initialize Module
+     */
+    public function init($e)
+    {
+        Autoload::add(__NAMESPACE__, dirname(__DIR__));
+    }
+
+    /**
+     * Get Module Name
+     *
+     * @return array
+     */
+    public function getName()
+    {
+        return 'EventsModule';
+    }
 
     /**
      * Get the routes for this module
@@ -27,6 +44,11 @@ class Module extends AbstractModule
         return $this->loadConfig(__DIR__ . '/resources/config/config.php');
     }
 
+    /**
+     * Get the Autoloader configuration for this module
+     *
+     * @return array
+     */
     public function getAutoloaderConfig()
     {
         return array(
@@ -38,4 +60,14 @@ class Module extends AbstractModule
         );
     }
 
+    /**
+     * Get the Service Config
+     *
+     */
+    public function getServiceConfig()
+    {
+        return array('factories' => array(
+
+        ));
+    }
 }
