@@ -1,3 +1,3 @@
-EventsModule_Index:
-    pattern: /events
-    defaults: { _controller: "EventsModule:Index:index"}
+EventsModule_Calendar:
+    pattern: /events/calendar
+    defaults: { _controller: "EventsModule:Events:calendar"}
