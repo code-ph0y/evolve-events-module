@@ -15,7 +15,7 @@
 <?php $view['slots']->stop(); ?>
 
 <?php $view['slots']->start('include_css'); ?>
-    <link href="<?php echo $view['assets']->getUrl('components/fullcalendar/dist/fullcalendar.min.css'); ?>" />
+    <link rel="stylesheet" type="text/css" href="<?php echo $view['assets']->getUrl('components/fullcalendar/dist/fullcalendar.min.css'); ?>">
 <?php $view['slots']->stop(); ?>
 
 <div id="calendar"></div>
