@@ -18,4 +18,9 @@
     <link rel="stylesheet" type="text/css" href="<?php echo $view['assets']->getUrl('components/fullcalendar/dist/fullcalendar.min.css'); ?>">
 <?php $view['slots']->stop(); ?>
 
-<div id="calendar"></div>
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <div id="calendar"></div>
+    </div>
+    <div class="col-md-offset-1"></div>
+</div>
