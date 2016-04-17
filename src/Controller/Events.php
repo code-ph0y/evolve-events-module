@@ -8,6 +8,9 @@ class Events extends SharedController
 {
     public function calendarAction(Request $request)
     {
-        return $this->render('EventsModule:events:calendar.html.php');
+        // Get all events
+        $events = $this->getService('events.event.storage')->getAll();
+
+        return $this->render('EventsModule:events:calendar.html.php', compact('events'));
     }
 }

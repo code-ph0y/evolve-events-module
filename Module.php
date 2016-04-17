@@ -68,7 +68,12 @@ class Module extends AbstractModule
     public function getServiceConfig()
     {
         return array('factories' => array(
-
+            'events.event.storage' => function ($sm) {
+                 return new \EventsModule\Storage\Event($sm->get('datasource')->getConnection('main'));
+            },
+            'events.eventlocation.storage' => function ($sm) {
+                 return new \EventsModule\Storage\EventLocation($sm->get('datasource')->getConnection('main'));
+            }
         ));
     }
 }
