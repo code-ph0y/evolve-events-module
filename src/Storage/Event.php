@@ -50,6 +50,11 @@ class Event extends BaseStorage
         return $this->assocToEntities($rows);
     }
 
+    /**
+     * Get the events for the current month
+     *
+     * @return mixed
+     */
     public function getCurrentMonthEvents()
     {
         $rows = $this->ds->createQueryBuilder()
