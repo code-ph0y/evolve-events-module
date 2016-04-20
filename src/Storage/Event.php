@@ -50,6 +50,19 @@ class Event extends BaseStorage
         return $this->assocToEntities($rows);
     }
 
+    public function getCurrentMonthEvents()
+    {
+        $rows = $this->ds->createQueryBuilder()
+            ->select('e.*')
+            ->from($this->meta_data['table'], 'e')
+            ->where('YEAR(e.datetime_from) = :year')->setParameter(':year', date('Y'))
+            ->andWhere('MONTH(e.datetime_from) = :month')->setParameter(':month', date('m'))
+            ->execute()
+            ->fetchAll($this->meta_data['fetchMode']);
+
+        return $this->assocToEntities($rows);
+    }
+
     /**
      * Get a event entity by its Id
      *
