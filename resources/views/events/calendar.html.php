@@ -5,10 +5,16 @@
     <script src="<?php echo $view['assets']->getUrl('components/fullcalendar/dist/fullcalendar.min.js'); ?>"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-            // page is now ready, initialize the calendar...
 
             $('#calendar').fullCalendar({
-                // put your options and callbacks here
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,basicWeek,basicDay'
+                },
+                editable: true,
+                eventLimit: true, // allow "more" link when too many events
+                events: <?php echo $events; ?>
             });
         });
     </script>
